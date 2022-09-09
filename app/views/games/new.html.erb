@@ -1,0 +1,16 @@
+<h1 class="text-center">*******Longuest Word Game*******</h1>
+<p>Here is your grid:</p>
+<div class="letters">
+  <% @letters.each do |letter| %>
+    <span class="letter"> <%= letter %></span>
+  <% end %><br>
+  ******************************************************
+  <p>What is your longest word?</p>
+
+  <form action="<%= score_path %>" method="get">
+    <input type="text" name="attempt">
+    <input type="submit" value="try">
+    <input type="hidden" name="letters" value="<%= @letters %>">
+    <input type="hidden" name="start_time" value="<%= @start_time %>">
+  </form>
+</div>
